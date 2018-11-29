@@ -1,0 +1,36 @@
+@mixin bg-colors($bg_col, $col) {
+  background-color:$bg_col;
+  color:$col
+}
+@mixin header_nav(){
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  @content;
+}
+@mixin header_a($f_size: 1rem, $min_ht:2rem, $pdng:0 1.0rem){
+  flex-basis: 20%;
+  font-size: $f_size;
+  line-height: 2rem;
+  min-height: $min_ht;
+  border:none;
+  border-left:1px solid $light_grey;
+  padding:$pdng;
+  background-color: $white;
+  @content;
+}
+@mixin small {
+      @media all and (min-width:701px) and (max-width:900px) {
+        @content;
+    }
+}
+@mixin medium {  
+    @media all and (min-width:901px) and (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin big {
+    @media all and (min-width:1401px) {
+        @content;
+    }
+}
